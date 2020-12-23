@@ -1,40 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  	<meta charset=utf-8>
-  	<title>PHP Basics at Treehouse</title>
-  	<link href="css/style.css" rel="stylesheet" />
-  </head>
-  
-  <body>
-    <div id="wrap">
-        <section class="sidebar text-center">
-          <div class="avatar">
-            <img src="img/logo.png" alt="Alt For Image">
-          </div>
-          <h1>Name</h1>
-          <p>Contact:<br />
-          <a href="mailto:">EMAIL</a></p>
-          <hr />
-          <ul class="social">
-            <li><a href=""><span class="icon twitter"></span></a></li>
-          </ul>
-          <hr />
-          <p>Today: D, d M Y</p>
-        </section>
-        <section class="main">
-          <h1>My First PHP Page</h1>
-    
-          <h2>Unit Conversion</h2>
-            <?php include 'inc/units.php'; ?>
-          <hr />
-    
-          <h2>Daily Exercise</h2>
-            <?php include 'inc/exercie.php'; ?> 
-        </section>
-    </div>
-    <section class="footer text-center">
-      &copy; <?php echo date('Y') ?> Treehouse Island, Inc.
-    </section>
-  </body>
-</html>
+<?php 
+$pageTitle = "Personal Media Library";
+$section = null;
+
+include("inc/data.php");
+include("inc/functions.php");
+include("inc/header.php"); ?>
+<div class="section catalog random">
+
+			<div class="wrapper">
+
+				<h2>May we suggest something?</h2>
+
+				<ul class="items">
+				<?php
+            	foreach ($catalog as $id => $item) {
+                echo get_item_html($id, $item);
+            	}
+            	?>								
+				</ul>
+
+			</div>
+
+		</div>
+
+	</div>
+<?php include("inc/footer.php"); ?>
